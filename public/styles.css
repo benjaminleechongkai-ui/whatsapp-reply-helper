@@ -39,13 +39,16 @@ body {
 }
 
 .header {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   gap: 0.875rem;
-  padding: calc(1rem + var(--safe-top)) 1rem 1rem;
+  padding: calc(1rem + var(--safe-top)) 1rem 1.25rem;
   background: linear-gradient(160deg, var(--wa-dark) 0%, var(--wa-teal) 100%);
   color: #fff;
   box-shadow: 0 2px 8px rgba(7, 94, 84, 0.25);
+  flex-shrink: 0;
 }
 
 .header__icon {
@@ -73,9 +76,12 @@ body {
 }
 
 .main {
+  position: relative;
+  z-index: 1;
   max-width: 480px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1.25rem 1rem 1rem;
+  background: var(--bg);
 }
 
 .form {
@@ -91,9 +97,13 @@ body {
 }
 
 .field__label {
+  display: block;
   font-size: 0.8125rem;
   font-weight: 600;
+  line-height: 1.4;
   color: var(--wa-dark);
+  background: var(--bg);
+  padding: 0.125rem 0;
 }
 
 .optional {
@@ -325,9 +335,5 @@ body {
 @media (min-width: 481px) {
   .main {
     padding-top: 1.5rem;
-  }
-
-  body {
-    background: linear-gradient(180deg, var(--wa-dark) 120px, var(--bg) 120px);
   }
 }
